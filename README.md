@@ -28,4 +28,54 @@ Furthermore, besides the fact that there was a change of mindset, several other 
 | Running QAFE apps | Depending on the chosen server | 2 Gb | 50 Mb Per render engine (GWT, etc.) this amount of diskspace is used |
 
 
+```XML
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<applications  xmlns={_}{+}http://qafe.com/schema+_
+xmlns:xsi={_}{+}http://www.w3.org/2001/XMLSchema-instance+_ xsi:schemaLocation="http://qafe.com/schema
+http://www.qafe.com/schema/application-context.xsd">
+             
+  <application name="apps" id="system_app" >
+    <application-mapping-file location="qafe-default-system-app.xml"/>                       
+  </application>
+             
+ 
+  <application name="Hello World" id="<b>myApp</b>" >
+    <application-mapping>
+              <presentation-tier>
+            <view>
+          <window id="myWindow" displayname="Hello World">
+                <rootpanel>             
+                         <verticallayout>
+                        <button id="myButton" displayname="HellWorld"/>
+                      </verticallayout>
+                        </rootpanel>
+              </window>
+            </view>
+              </presentation-tier>
+    </application-mapping>                       
+  </application>
+             
+</applications> 
+```
 
+
+List:
+
+- $OFFSET
+- $COUNTPAGESAVAILABLE
+- $AMOUNT_PAGESAVAILABLE
+- $PAGESIZE
+- $SORT_COLUMN
+- $SORT_ORDER
+
+```java
+package com.qualogy.qafe.gwt.standalone; 
+    public class MyClass { 
+public int nextInt(){
+throw new IllegalArgumentException("MyClass illegal....");
+}
+    public float nextFloat(){
+return 0;
+}
+} 
+```java
