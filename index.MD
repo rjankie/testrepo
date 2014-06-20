@@ -1,1 +1,1 @@
-[a relative link](README.MD)
+[a relative link](README.md)
