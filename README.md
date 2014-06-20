@@ -21,7 +21,7 @@ In the same time, somehow to create a simple application was too hard. It took d
 Furthermore, besides the fact that there was a change of mindset, several other influences were found, that made software development in current days just too cumbersome. On the presentation technologies there were a lot of developments happening at the same time. 
 
 
-|Scenario      | CPU  | Memory  |Harddisk|
-|QAFE Tutorial | Any modern CPU| 2 Gb |1,7 Gb|
-|Developing in QAML| Any modern CPU | 1,5 Gb |50 Mb Per render engine (GWT, etc.) this amount of diskspace is used.|
+| Scenario      | CPU  | Memory  |Harddisk|
+| QAFE Tutorial | Any modern CPU| 2 Gb |1,7 Gb|
+| Developing in QAML| Any modern CPU | 1,5 Gb |50 Mb Per render engine (GWT, etc.) this amount of diskspace is used.|
 Running QAFE apps |Depending on the chosen server |2 Gb |50 Mb Per render engine (GWT, etc.) this amount of diskspace is used|
