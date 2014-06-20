@@ -19,3 +19,9 @@ Since Oracle Forms was a solid solution, worldwide companies implemented their c
 Technology evolved and just around the year 2000 Oracle announced to go the Web and Java. Internet was gaining momentum, even Enteprises started to believe in internet technology. The stack that Oracle was foreseeing for the next generation applications was Java based, which is different than the base for Oracle Forms (which is PL/SQL). 
 In the same time, somehow to create a simple application was too hard. It took days, and the progress that was made was just not that of what was expected. Furthermore, for some developers the change of mindset from relational/data oriented thinking to object oriented was needed. This was a hard one. Some Oracle Forms Developers made it, but most of them didn't. Still the relational/data oriented developer (currently called "Oracle Classic Developers") had a strong argument against the new object oriented way of development, the productivity being higher than the developer using object orientation. 
 Furthermore, besides the fact that there was a change of mindset, several other influences were found, that made software development in current days just too cumbersome. On the presentation technologies there were a lot of developments happening at the same time. 
+
+
+|Scenario      | CPU  | Memory  |Harddisk|
+|QAFE Tutorial | Any modern CPU| 2 Gb |1,7 Gb|
+|Developing in QAML| Any modern CPU | 1,5 Gb |50 Mb Per render engine (GWT, etc.) this amount of diskspace is used.|
+Running QAFE apps |Depending on the chosen server |2 Gb |50 Mb Per render engine (GWT, etc.) this amount of diskspace is used|
