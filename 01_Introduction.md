@@ -1,13 +1,13 @@
 #QAFE Book
 
-![qafelogo](http://www.qafe.com/wp-content/themes/qafe2013/img/logo.png)
+![qafelogo](assets/images/logo.png)
 
 ## 1. Introduction: QAFE Core Platform
 
 ### 1.1 What is QAFE?
 QAFE is a product from [Qualogy Consultancy B.V](http://www.qualogy.com) and is an acronym for "Quality Application Framework for Enterprises".
 
-![qualogylogo](http://www.qualogy.com/wp-content/themes/qua/images/q_logo.png)
+![qualogylogo](assets/images/q_logo.png)
 
 QAFE is the result of years of experience, best practices and theory. They all come together in this product. This product is meant for large enterprises and foresees in future developments.
 
@@ -20,6 +20,7 @@ Technology evolved and just around the year 2000 Oracle announced to go the Web 
 In the same time, somehow to create a simple application was too hard. It took days, and the progress that was made was just not that of what was expected. Furthermore, for some developers the change of mindset from relational/data oriented thinking to object oriented was needed. This was a hard one. Some Oracle Forms Developers made it, but most of them didn't. Still the relational/data oriented developer (currently called "Oracle Classic Developers") had a strong argument against the new object oriented way of development, the productivity being higher than the developer using object orientation.
 Furthermore, besides the fact that there was a change of mindset, several other influences were found, that made software development in current days just too cumbersome. On the presentation technologies there were a lot of developments happening at the same time.
 
+![frameworks](assets/images/frameworks.png)
 
 | Scenario      | CPU  | Memory  |Harddisk |
 |---------------|------|---------|---------|
