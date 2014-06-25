@@ -1,81 +1,91 @@
-#QAFE Book[TEST DOCUMENT]
+#QAFE Book
 
-![qafelogo](http://www.qafe.com/wp-content/themes/qafe2013/img/logo.png) 
+![qafelogo](http://www.qafe.com/wp-content/themes/qafe2013/img/logo.png)
 
-## 1. Introduction: QAFE Core Platform
+## 3 QAFE Basics
+In the previous chapter the software for QAFE Development was installed. Then a simple project project was created and the QAFE HelloWorld application was shown at runtime.
 
-### 1.1 What is QAFE?
-QAFE is a product from [Qualogy Consultancy B.V](http://www.qualogy.com) and is an acronym for "Quality Application Framework for Enterprises". 
-
-![qualogylogo](http://www.qualogy.com/wp-content/themes/qua/images/q_logo.png)
-
-QAFE is the result of years of experience, best practices and theory. They all come together in this product. This product is meant for large enterprises and foresees in future developments.
-
-### 1.2 Why QAFE ?
-QAFE was born as a result of the fact that application development became harder while technologies evolved. 
-One major technology which became an industry standard is Oracle Forms. Oracle Forms is implementation of the Client-Server Paradigm, where data entry from desktop clients to a centralized database is the core application. 
-Since Oracle Forms was a solid solution, worldwide companies implemented their core process in Oracle Forms. Next to being a solid solution, building applications in Oracle Forms technology was fast. Productivity of Oracle Forms Developers was high. 
-
-Technology evolved and just around the year 2000 Oracle announced to go the Web and Java. Internet was gaining momentum, even Enteprises started to believe in internet technology. The stack that Oracle was foreseeing for the next generation applications was Java based, which is different than the base for Oracle Forms (which is PL/SQL). 
-In the same time, somehow to create a simple application was too hard. It took days, and the progress that was made was just not that of what was expected. Furthermore, for some developers the change of mindset from relational/data oriented thinking to object oriented was needed. This was a hard one. Some Oracle Forms Developers made it, but most of them didn't. Still the relational/data oriented developer (currently called "Oracle Classic Developers") had a strong argument against the new object oriented way of development, the productivity being higher than the developer using object orientation. 
-Furthermore, besides the fact that there was a change of mindset, several other influences were found, that made software development in current days just too cumbersome. On the presentation technologies there were a lot of developments happening at the same time. 
-
-
-| Scenario      | CPU  | Memory  |Harddisk |
-|---------------|------|---------|---------|
-| QAFE Tutorial | Any modern CPU| 2 Gb |1,7 Gb |
-| Developing in QAML| Any modern CPU | 1,5 Gb |50 Mb Per render engine (GWT, etc.) this amount of diskspace is used. |
-| Running QAFE apps | Depending on the chosen server | 2 Gb | 50 Mb Per render engine (GWT, etc.) this amount of diskspace is used |
+In this chapter we’ll dive into the anatomy of the QAFE HelloWorld Application.
 
 
 ```XML
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<applications  xmlns={_}{+}http://qafe.com/schema+_
-xmlns:xsi={_}{+}http://www.w3.org/2001/XMLSchema-instance+_ xsi:schemaLocation="http://qafe.com/schema
-http://www.qafe.com/schema/application-context.xsd">
-             
-  <application name="apps" id="system_app" >
-    <application-mapping-file location="qafe-default-system-app.xml"/>                       
-  </application>
-             
- 
-  <application name="Hello World" id="<b>myApp</b>" >
-    <application-mapping>
-              <presentation-tier>
-            <view>
-          <window id="myWindow" displayname="Hello World">
-                <rootpanel>             
-                         <verticallayout>
-                        <button id="myButton" displayname="HellWorld"/>
-                      </verticallayout>
-                        </rootpanel>
-              </window>
-            </view>
-              </presentation-tier>
-    </application-mapping>                       
-  </application>
-             
-</applications> 
+<presentation-tier>
+		<view>
+			<window id="helloWorld" displayname="Hello World" width="300" height="250">
+				<rootpanel id="rootPanelId">
+					<verticallayout>
+						<button id="clickMeButtonId" displayname="Click me"/>
+					</verticallayout>
+				</rootpanel>  
+				<events>
+					<event id="clickMeEventId">
+						<listeners>
+							<listenergroup>
+								<component ref="clickMeButtonId"/>  
+								<listener type="onclick"/>
+							</listenergroup>
+						</listeners>  
+						<dialog type="info">
+							<title value="Hello Dialog"/>  
+							<message value="Hello World!"/>
+						</dialog>
+					</event>
+				</events>
+			</window>
+		</view>
+	</presentation-tier>  
+
+
 ```
 
 
-List:
+```XML
+<applications  xmlns=http://qafe.com/schema
+xmlns:xsi=http://www.w3.org/2001/XMLSchema-instance xsi:schemaLocation="http://qafe.com/schema
+http://www.qafe.com/schema/application-context.xsd">
 
-- $OFFSET
-- $COUNTPAGESAVAILABLE
-- $AMOUNT_PAGESAVAILABLE
-- $PAGESIZE
-- $SORT_COLUMN
-- $SORT_ORDER
+  <application name="apps" id="system_app" >
+    <application-mapping-file location="qafe-default-system-app.xml"/>
+  </application>
 
-```java
-package com.qualogy.qafe.gwt.standalone; 
-    public class MyClass { 
-public int nextInt(){
-throw new IllegalArgumentException("MyClass illegal....");
-}
-    public float nextFloat(){
-return 0;
-}
-} 
+
+  <application name="Hello World" id="myApp" >
+    <application-mapping>
+       <presentation-tier>
+         <view>
+          <window id="myWindow" displayname="Hello World">
+            <rootpanel>
+              <verticallayout>
+           	   <button id="myButton" displayname="HellWorld"/>
+           	 </verticallayout>
+            </rootpanel>
+          </window>
+        </view>
+      </presentation-tier>
+    </application-mapping>
+  </application>
+
+</applications>
+```
+
+
+The applications that are needed are specified within the application tag in the XML. The application tag has an id and name attribute. The name attribute is shown in the system application menu shown in the virtual desktop page which is used to invoke the application. The definition of the application is done within the application-mapping tag.
+
+In the code sample, there are in two applications: system_app and hello_world. The xml file mentioned as attribute value in the application-mapping-file tag with the id system_app represents the system application menu.
+
+We advice you to place all your QAML files (definition of your applications based on XML) including the application-config.xml file outside the QAFE software deployment location. This may become handy when the QAFE software needs to be updated as it will make sure that your QAML files are not affected when QAFE is updated. After updation of QAFE (if any), you will only need to redefine the location of the application-config.xml in the overwritten web.xml file.
+
+> NOTE: If you don't want to have the files in your WEB-INF directory, you can modify the application-config.xml to other file locations as long as the file is reachable through a valid URL.
+
+If QAML contain resources that refer to their statement files, then the statements files need to be located in the same directory (since the statements files are always relative file locations).
+If there is an application-config file which contains an application which on its turn has multiple filelocations for the application-mapping, make sure that the statements file in the resources are defined in a correct and concise manner.
+
+Example:
+
+```XML
+<application id="system_app" name="sysapp">
+	<application-mapping-file
+	        location="file:///f:/test-web/qafe-default-system-app.xml"/>
+</application>
+
 ```
