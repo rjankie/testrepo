@@ -1,16 +1,16 @@
-# 4. Writing a Web Application
+# 5. Writing a Web Application
 
-## 4.1. Overview
+## 5.1. Overview
 
-## 4.2. Managing the Main Window
+## 5.2. Managing the Main Window
 
-## 4.3. Sub-Windows
+## 5.3. Sub-Windows
 
-## 4.4. Handling Events with Listeners
+## 5.4. Handling Events with Listeners
 
-## 4.2 Events
+## 5.2 Events
 
-##### 4.2.1 Listeners/Listener Groups
+##### 5.2.1 Listeners/Listener Groups
 
 Events are used in order to associate actions to components. All the events that need to be defined are included in the *<events>  *tag in QAML file. An event that can be defined within the*<event> *tag can have the following attributes.
 
